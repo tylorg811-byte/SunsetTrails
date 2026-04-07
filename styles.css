@@ -216,4 +216,13 @@ transition:all 0.8s ease;
 opacity:1;
 transform:translateY(0);
 }  
-}
+
+.section{
+padding:120px 10%;
+text-align:center;
+background:linear-gradient(
+to bottom,
+#fffaf3,
+#f5e6d3
+);
+}  
