@@ -1,38 +1,190 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Gallery | Sunset Trails</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | Sunset Trails Photography</title>
+
 <link rel="stylesheet" href="styles.css">
-<script defer src="script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* PAGE HEADER */
+.gallery-hero{
+height:50vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.gallery-hero h1{
+font-family:'Playfair Display';
+font-size:3rem;
+}
+
+/* FILTER BUTTONS */
+.filters{
+display:flex;
+justify-content:center;
+gap:15px;
+margin:50px 0;
+flex-wrap:wrap;
+}
+
+.filter-btn{
+padding:10px 20px;
+border-radius:30px;
+border:none;
+background:#eee;
+cursor:pointer;
+transition:.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+background:linear-gradient(135deg,#E67E22,#D4AF37);
+color:white;
+}
+
+/* GALLERY GRID */
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+padding:0 10%;
+}
+
+.gallery-item{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+}
+
+.gallery-item img{
+width:100%;
+height:350px;
+object-fit:cover;
+transition:.4s;
+}
+
+/* HOVER EFFECT */
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+.gallery-overlay{
+position:absolute;
+bottom:0;
+width:100%;
+padding:20px;
+background:linear-gradient(transparent, rgba(0,0,0,0.7));
+color:white;
+opacity:0;
+transition:.4s;
+}
+
+.gallery-item:hover .gallery-overlay{
+opacity:1;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="page">
+<!-- NAV -->
+<nav class="nav">
+<div class="logo">Sunset Trails</div>
 
-<nav>
-<div>Sunset Trails</div>
-<div>
+<div class="nav-links" id="navLinks">
+<div class="close-btn" onclick="toggleMenu()">✕</div>
+
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
 <a href="gallery.html">Gallery</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
+<a href="contact.html" class="nav-btn">Book Now</a>
 </div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>
 
-<section class="section">
-<h1>Gallery</h1>
-
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1504203700686-0c4c8b3f9a43">
-<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486">
-<img src="https://images.unsplash.com/photo-1495567720989-cebdbdd97913">
-</div>
-
+<!-- HERO -->
+<section class="gallery-hero">
+<h1>Our Work</h1>
 </section>
 
+<!-- FILTERS -->
+<div class="filters">
+<button class="filter-btn active" onclick="filterSelection('all')">All</button>
+<button class="filter-btn" onclick="filterSelection('wedding')">Weddings</button>
+<button class="filter-btn" onclick="filterSelection('family')">Family</button>
+<button class="filter-btn" onclick="filterSelection('couple')">Couples</button>
 </div>
+
+<!-- GALLERY -->
+<div class="gallery-grid">
+
+<div class="gallery-item wedding">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80">
+<div class="gallery-overlay">Wedding</div>
+</div>
+
+<div class="gallery-item family">
+<img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80">
+<div class="gallery-overlay">Family</div>
+</div>
+
+<div class="gallery-item couple">
+<img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80">
+<div class="gallery-overlay">Couple</div>
+</div>
+
+<div class="gallery-item wedding">
+<img src="https://images.unsplash.com/photo-1504203700686-0c4c8b3f9a43?auto=format&fit=crop&w=1200&q=80">
+<div class="gallery-overlay">Wedding</div>
+</div>
+
+<div class="gallery-item family">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=80">
+<div class="gallery-overlay">Family</div>
+</div>
+
+<div class="gallery-item couple">
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80">
+<div class="gallery-overlay">Couple</div>
+</div>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
+function filterSelection(category){
+let items = document.getElementsByClassName("gallery-item");
+
+for(let i=0;i<items.length;i++){
+items[i].style.display = (category==="all" || items[i].classList.contains(category)) ? "block":"none";
+}
+
+// active button
+document.querySelectorAll(".filter-btn").forEach(btn=>btn.classList.remove("active"));
+event.target.classList.add("active");
+}
+</script>
 
 </body>
 </html>
