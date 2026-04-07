@@ -170,6 +170,29 @@ items[i].style.display = (category==="all" || items[i].classList.contains(catego
 document.querySelectorAll(".filter-btn").forEach(btn=>btn.classList.remove("active"));
 event.target.classList.add("active");
 }
+
+// LIGHTBOX
+const images = document.querySelectorAll(".gallery-item img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close-lightbox");
+
+images.forEach(img=>{
+img.addEventListener("click",()=>{
+lightbox.style.display = "flex";
+lightboxImg.src = img.src;
+});
+});
+
+closeBtn.addEventListener("click",()=>{
+lightbox.style.display = "none";
+});
+
+lightbox.addEventListener("click",(e)=>{
+if(e.target !== lightboxImg){
+lightbox.style.display = "none";
+}
+});
 </script>
 
 <div id="lightbox" class="lightbox">
