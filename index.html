@@ -23,23 +23,24 @@ font-family:'Inter',sans-serif;
 background:var(--soft);
 }
 
-<nav class="nav">
+/* NAV */
+nav{
+position:fixed;
+width:100%;
+padding:25px 40px;
+display:flex;
+justify-content:space-between;
+background:rgba(255,255,255,0.5);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
 
-<div class="logo">Sunset Trails</div>
-
-<div class="nav-links" id="navLinks">
-<a href="services.html">Services</a>
-<a href="gallery.html">Gallery</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="contact.html" class="nav-btn">Book Now</a>
-</div>
-
-<div class="menu-toggle" onclick="toggleMenu()">
-☰
-</div>
-
-</nav>
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
 
 /* HERO */
 .hero{
