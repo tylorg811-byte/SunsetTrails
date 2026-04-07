@@ -1,48 +1,190 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Services | Sunset Trails</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Services | Sunset Trails Photography</title>
+
 <link rel="stylesheet" href="styles.css">
-<script defer src="script.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* HERO */
+.services-hero{
+height:60vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url('https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.services-hero h1{
+font-family:'Playfair Display';
+font-size:3rem;
+}
+
+/* SECTION */
+.services-section{
+padding:100px 10%;
+background:linear-gradient(to bottom,#fffaf3,#f5e6d3);
+}
+
+.service-card{
+display:flex;
+flex-wrap:wrap;
+margin-bottom:80px;
+align-items:center;
+gap:40px;
+}
+
+.service-card img{
+width:100%;
+max-width:500px;
+border-radius:20px;
+}
+
+.service-text{
+flex:1;
+}
+
+.service-text h2{
+font-family:'Playfair Display';
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.service-text p{
+margin-bottom:15px;
+line-height:1.6;
+}
+
+.price{
+font-weight:600;
+margin-bottom:20px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 25px;
+border-radius:30px;
+background:linear-gradient(135deg,#E67E22,#D4AF37);
+color:white;
+text-decoration:none;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+padding:100px 20px;
+background:#1C1C1C;
+color:white;
+}
+
+.cta h2{
+font-family:'Playfair Display';
+font-size:2.5rem;
+margin-bottom:20px;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="page">
+<!-- NAV -->
+<nav class="nav">
+<div class="logo">Sunset Trails</div>
 
-<nav>
-<div>Sunset Trails</div>
-<div>
+<div class="nav-links" id="navLinks">
+<div class="close-btn" onclick="toggleMenu()">✕</div>
+
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
 <a href="gallery.html">Gallery</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
+<a href="contact.html" class="nav-btn">Book Now</a>
 </div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>
 
-<section class="section">
-<h1>Services</h1>
+<!-- HERO -->
+<section class="services-hero">
+<h1>Experience Photography Differently</h1>
+</section>
 
-<div class="card">
+<!-- SERVICES -->
+<section class="services-section">
+
+<!-- WEDDINGS -->
+<div class="service-card">
+<img src="https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg">
+<div class="service-text">
 <h2>Weddings</h2>
-<p>Starting at $1,200+ -- Full-day storytelling with cinematic editing.</p>
+<p>Your wedding isn’t just an event — it’s a story that deserves to be told beautifully. From quiet moments to unforgettable celebrations, every detail is captured with intention.</p>
+<p class="price">Starting at $1,200+</p>
+<a href="contact.html" class="btn">Book Your Date</a>
+</div>
 </div>
 
-<div class="card">
-<h2>Engagements</h2>
-<p>Starting at $350+ -- Golden hour sessions designed to feel natural.</p>
+<!-- ENGAGEMENT -->
+<div class="service-card">
+<img src="https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg">
+<div class="service-text">
+<h2>Engagement Sessions</h2>
+<p>Celebrate your love story in a way that feels real, natural, and timeless. These sessions are relaxed, fun, and designed to capture your connection.</p>
+<p class="price">Starting at $300+</p>
+<a href="contact.html" class="btn">Book Session</a>
+</div>
 </div>
 
-<div class="card">
+<!-- FAMILY -->
+<div class="service-card">
+<img src="https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg">
+<div class="service-text">
 <h2>Family Sessions</h2>
-<p>Starting at $250+ -- Real moments, not stiff poses.</p>
+<p>Moments with your family go by fast — we capture them in a way that feels warm, genuine, and full of life.</p>
+<p class="price">Starting at $250+</p>
+<a href="contact.html" class="btn">Book Session</a>
+</div>
+</div>
+
+<!-- MATERNITY -->
+<div class="service-card">
+<img src="https://images.pexels.com/photos/3662667/pexels-photo-3662667.jpeg">
+<div class="service-text">
+<h2>Maternity Shoots</h2>
+<p>This season of life is powerful and beautiful. Capture the anticipation, love, and emotion before your new chapter begins.</p>
+<p class="price">Starting at $275+</p>
+<a href="contact.html" class="btn">Book Session</a>
+</div>
 </div>
 
 </section>
 
-</div>
+<!-- CTA -->
+<section class="cta">
+<h2>Let’s Capture Your Story</h2>
+<a href="contact.html" class="btn">Check Availability</a>
+</section>
 
+<!-- SCRIPT -->
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
 </body>
 </html>
