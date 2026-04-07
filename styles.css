@@ -152,13 +152,8 @@ font-size:2rem;
 
 /* PAGE TRANSITION */
 .page{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-.page.active{
 opacity:1;
-transform:translateY(0);
+transform:none;
 }
 
 /* MOBILE */
