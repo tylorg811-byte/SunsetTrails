@@ -102,14 +102,14 @@ height:100%;
 background:
 linear-gradient(
 to top,
-rgba(255,180,80,0.45),
+rgba(255,170,80,0.4),
 rgba(255,210,140,0.2),
 rgba(255,255,255,0.05)
 ),
-url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
-z-index:0;
+z-index:-1;
 }
 
 .hero-content{
