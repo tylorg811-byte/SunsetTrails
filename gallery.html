@@ -11,13 +11,12 @@
 
 <style>
 
-/* PAGE HEADER */
+/* HERO */
 .gallery-hero{
 height:50vh;
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
 background:
 linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
 url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
@@ -31,69 +30,50 @@ font-family:'Playfair Display';
 font-size:3rem;
 }
 
-/* FILTER BUTTONS */
+/* FILTERS */
 .filters{
 display:flex;
 justify-content:center;
-gap:15px;
-margin:50px 0;
+gap:12px;
 flex-wrap:wrap;
+margin:50px 0;
 }
 
 .filter-btn{
-padding:10px 20px;
+padding:10px 18px;
 border-radius:30px;
 border:none;
 background:#eee;
 cursor:pointer;
-transition:.3s;
 }
 
-.filter-btn.active,
-.filter-btn:hover{
+.filter-btn.active{
 background:linear-gradient(135deg,#E67E22,#D4AF37);
 color:white;
 }
 
-/* GALLERY GRID */
+/* GRID */
 .gallery-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
-padding:0 10%;
+padding:0 10% 80px;
 }
 
 .gallery-item{
-position:relative;
 overflow:hidden;
-border-radius:20px;
+border-radius:18px;
 }
 
 .gallery-item img{
 width:100%;
-height:350px;
+height:320px;
 object-fit:cover;
 transition:.4s;
 }
 
-/* HOVER EFFECT */
 .gallery-item:hover img{
-transform:scale(1.1);
-}
-
-.gallery-overlay{
-position:absolute;
-bottom:0;
-width:100%;
-padding:20px;
-background:linear-gradient(transparent, rgba(0,0,0,0.7));
-color:white;
-opacity:0;
-transition:.4s;
-}
-
-.gallery-item:hover .gallery-overlay{
-opacity:1;
+transform:scale(1.08);
 }
 
 </style>
@@ -131,7 +111,6 @@ opacity:1;
 <button class="filter-btn" onclick="filterSelection('engagement')">Engagement</button>
 <button class="filter-btn" onclick="filterSelection('family')">Family</button>
 <button class="filter-btn" onclick="filterSelection('sunset')">Sunsets</button>
-<button class="filter-btn" onclick="filterSelection('baby')">Baby Showers</button>
 <button class="filter-btn" onclick="filterSelection('maternity')">Maternity</button>
 </div>
 
@@ -139,46 +118,39 @@ opacity:1;
 <div class="gallery-grid">
 
 <!-- WEDDINGS -->
-<div class="gallery-item wedding"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Wedding</div></div>
-<div class="gallery-item wedding"><img src="https://images.unsplash.com/photo-1504203700686-0c4c8b3f9a43?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Wedding</div></div>
-<div class="gallery-item wedding"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Wedding</div></div>
-<div class="gallery-item wedding"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Wedding</div></div>
-<div class="gallery-item wedding"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Wedding</div></div>
+<div class="gallery-item wedding"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item wedding"><img src="https://images.unsplash.com/photo-1504203700686-0c4c8b3f9a43?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item wedding"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item wedding"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item wedding"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"></div>
 
 <!-- ENGAGEMENT -->
-<div class="gallery-item engagement"><img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Engagement</div></div>
-<div class="gallery-item engagement"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Engagement</div></div>
-<div class="gallery-item engagement"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Engagement</div></div>
-<div class="gallery-item engagement"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Engagement</div></div>
-<div class="gallery-item engagement"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Engagement</div></div>
+<div class="gallery-item engagement"><img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item engagement"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item engagement"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item engagement"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item engagement"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"></div>
 
 <!-- FAMILY -->
-<div class="gallery-item family"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Family</div></div>
-<div class="gallery-item family"><img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Family</div></div>
-<div class="gallery-item family"><img src="https://images.unsplash.com/photo-1504203700686-0c4c8b3f9a43?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Family</div></div>
-<div class="gallery-item family"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Family</div></div>
-<div class="gallery-item family"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Family</div></div>
+<div class="gallery-item family"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item family"><img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item family"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item family"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item family"><img src="https://images.unsplash.com/photo-1504203700686-0c4c8b3f9a43?auto=format&fit=crop&w=1200&q=80"></div>
 
 <!-- SUNSETS -->
-<div class="gallery-item sunset"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Sunset</div></div>
-<div class="gallery-item sunset"><img src="https://images.unsplash.com/photo-1501973801540-537f08ccae7b?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Sunset</div></div>
-<div class="gallery-item sunset"><img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Sunset</div></div>
-<div class="gallery-item sunset"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Sunset</div></div>
-<div class="gallery-item sunset"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Sunset</div></div>
-
-<!-- BABY SHOWER -->
-<div class="gallery-item baby"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Baby Shower</div></div>
-<div class="gallery-item baby"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Baby Shower</div></div>
-<div class="gallery-item baby"><img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Baby Shower</div></div>
-<div class="gallery-item baby"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Baby Shower</div></div>
-<div class="gallery-item baby"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Baby Shower</div></div>
+<div class="gallery-item sunset"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item sunset"><img src="https://images.unsplash.com/photo-1501973801540-537f08ccae7b?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item sunset"><img src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item sunset"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item sunset"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80"></div>
 
 <!-- MATERNITY -->
-<div class="gallery-item maternity"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Maternity</div></div>
-<div class="gallery-item maternity"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Maternity</div></div>
-<div class="gallery-item maternity"><img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Maternity</div></div>
-<div class="gallery-item maternity"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Maternity</div></div>
-<div class="gallery-item maternity"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80"><div class="gallery-overlay">Maternity</div></div>
+<div class="gallery-item maternity"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item maternity"><img src="https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item maternity"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item maternity"><img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80"></div>
+<div class="gallery-item maternity"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80"></div>
 
 </div>
 
@@ -195,7 +167,6 @@ for(let i=0;i<items.length;i++){
 items[i].style.display = (category==="all" || items[i].classList.contains(category)) ? "block":"none";
 }
 
-// active button
 document.querySelectorAll(".filter-btn").forEach(btn=>btn.classList.remove("active"));
 event.target.classList.add("active");
 }
