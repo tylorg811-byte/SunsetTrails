@@ -21,14 +21,13 @@
 body{
 font-family:'Inter',sans-serif;
 background:var(--soft);
-color:#2b2b2b;
 }
 
 /* NAV */
 nav{
 position:fixed;
 width:100%;
-padding:25px 60px;
+padding:25px 40px;
 display:flex;
 justify-content:space-between;
 background:rgba(255,255,255,0.5);
@@ -37,7 +36,7 @@ z-index:1000;
 }
 
 nav a{
-margin-left:30px;
+margin-left:20px;
 text-decoration:none;
 color:#333;
 font-weight:500;
@@ -54,80 +53,76 @@ position:relative;
 overflow:hidden;
 }
 
-.hero video{
+/* SUNSET IMAGE */
+.hero-bg{
 position:absolute;
+top:0;
+left:0;
 width:100%;
 height:100%;
-object-fit:cover;
-z-index:-1;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(
+background:
+linear-gradient(
 to top,
-rgba(0,0,0,0.35),
-rgba(0,0,0,0.1),
-transparent
-);
+rgba(255,180,80,0.45),
+rgba(255,210,140,0.2),
+rgba(255,255,255,0.05)
+),
+url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+background-size:cover;
+background-position:center;
+z-index:0;
 }
 
+/* CONTENT */
 .hero-content{
+position:relative;
+z-index:2;
 max-width:900px;
-backdrop-filter:blur(6px);
-background:rgba(0,0,0,0.25);
 padding:40px;
-border-radius:20px;
 }
 
 .brand{
 letter-spacing:6px;
-color:var(--orange);
-margin-bottom:20px;
 font-size:14px;
+color:#fff3e0;
+margin-bottom:20px;
 }
 
 .hero h1{
 font-family:'Playfair Display';
-font-size:4.5rem;
-line-height:1.1;
+font-size:4rem;
 color:white;
-text-shadow:0 10px 40px rgba(0,0,0,0.6);
+text-shadow:0 10px 40px rgba(0,0,0,0.5);
 }
 
 .hero p{
 margin:25px 0;
 font-size:1.2rem;
-color:white;
-opacity:0.95;
+color:#fffaf3;
 }
 
-/* BUTTON */
 .btn{
-padding:16px 36px;
-background:linear-gradient(135deg,#D4AF37,#E67E22);
+display:inline-block;
+padding:18px 42px;
+background:linear-gradient(135deg,#E67E22,#D4AF37);
 color:white;
+font-weight:600;
 border-radius:50px;
 text-decoration:none;
-font-weight:600;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
+box-shadow:0 15px 40px rgba(0,0,0,0.25);
 transition:.3s;
 }
 
 .btn:hover{
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 15px 40px rgba(0,0,0,0.5);
+transform:translateY(-4px) scale(1.05);
 }
 
 /* SECTION */
 .section{
-padding:140px 10%;
+padding:120px 10%;
 text-align:center;
 }
 
-/* IMAGE GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -141,14 +136,6 @@ height:400px;
 object-fit:cover;
 border-radius:20px;
 }
-
-/* CTA */
-.cta{
-background:linear-gradient(135deg,#fff,#f5e6d3);
-padding:120px 20px;
-text-align:center;
-}
-
 </style>
 </head>
 
@@ -164,27 +151,25 @@ text-align:center;
 </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-<video autoplay muted loop playsinline>
-<source src="https://cdn.coverr.co/videos/coverr-sunset-beach-waves-1570/1080p.mp4" type="video/mp4">
-</video>
+<div class="hero-bg"></div>
 
 <div class="hero-content">
 <div class="brand">SUNSET TRAILS PHOTOGRAPHY</div>
+
 <h1>Capturing Moments That Feel Like Forever</h1>
+
 <p>Luxury storytelling through golden-hour photography</p>
+
 <a href="contact.html" class="btn">Book Your Session</a>
 </div>
 </section>
 
-<!-- TRUST -->
 <section class="section">
 <h2>Trusted by 100+ Clients</h2>
 <p>Real moments. Real emotion. Timeless results.</p>
 </section>
 
-<!-- GALLERY PREVIEW -->
 <section class="section">
 <h2>Featured Work</h2>
 
@@ -194,13 +179,6 @@ text-align:center;
 <img src="https://images.unsplash.com/photo-1495567720989-cebdbdd97913">
 </div>
 
-</section>
-
-<!-- CTA -->
-<section class="cta">
-<h2>Let’s Capture Your Story</h2>
-<br>
-<a href="contact.html" class="btn">Check Availability</a>
 </section>
 
 </body>
