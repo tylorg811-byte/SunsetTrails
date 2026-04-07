@@ -1,40 +1,215 @@
-<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>About | Sunset Trails</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About | Sunset Trails Photography</title>
+
 <link rel="stylesheet" href="styles.css">
-<script defer src="script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* HERO */
+.about-hero{
+height:60vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url('https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg');
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.about-hero h1{
+font-family:'Playfair Display';
+font-size:3rem;
+}
+
+/* SECTION */
+.about-section{
+padding:100px 10%;
+background:linear-gradient(to bottom,#fffaf3,#f5e6d3);
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:50px;
+}
+
+/* IMAGE */
+.about-img{
+flex:1;
+}
+
+.about-img img{
+width:100%;
+border-radius:20px;
+}
+
+/* TEXT */
+.about-text{
+flex:1;
+}
+
+.about-text h2{
+font-family:'Playfair Display';
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.about-text p{
+margin-bottom:15px;
+line-height:1.6;
+}
+
+/* VALUES */
+.values{
+padding:80px 10%;
+text-align:center;
+}
+
+.values h2{
+font-family:'Playfair Display';
+margin-bottom:40px;
+}
+
+.value-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.value{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* CTA */
+.cta{
+text-align:center;
+padding:100px 20px;
+background:#1C1C1C;
+color:white;
+}
+
+.cta h2{
+font-family:'Playfair Display';
+font-size:2.5rem;
+margin-bottom:20px;
+}
+
+.btn{
+padding:12px 30px;
+border-radius:30px;
+background:linear-gradient(135deg,#E67E22,#D4AF37);
+color:white;
+text-decoration:none;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="page">
+<!-- NAV -->
+<nav class="nav">
+<div class="logo">Sunset Trails</div>
 
-<nav>
-<div>Sunset Trails</div>
-<div>
+<div class="nav-links" id="navLinks">
+<div class="close-btn" onclick="toggleMenu()">✕</div>
+
 <a href="index.html">Home</a>
 <a href="services.html">Services</a>
 <a href="gallery.html">Gallery</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
+<a href="contact.html" class="nav-btn">Book Now</a>
 </div>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>
 
-<section class="section">
-<h1>About</h1>
+<!-- HERO -->
+<section class="about-hero">
+<h1>Behind The Lens</h1>
+</section>
 
-<div class="card">
-<p>
-I don't just take photos -- I capture emotion, connection, and real moments.
-My goal is to create a relaxed, luxury experience where you feel comfortable
-and leave with memories that last forever.
-</p>
+<!-- ABOUT -->
+<section class="about-section">
+
+<div class="about-img">
+<img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg">
+</div>
+
+<div class="about-text">
+
+<h2>More Than Just Photos</h2>
+
+<p>Sunset Trails Photography was built on one simple idea — moments deserve to be felt, not just seen.</p>
+
+<p>Every session is more than a shoot. It’s an experience designed to capture emotion, connection, and the little details that make your story unique.</p>
+
+<p>From golden hour beach sessions to life’s biggest milestones, the goal is always the same: create images that take you back to exactly how it felt.</p>
+
+<p>This isn’t about stiff poses or forced smiles — it’s about real moments, real connection, and timeless storytelling.</p>
+
 </div>
 
 </section>
 
+<!-- VALUES -->
+<section class="values">
+
+<h2>What Makes It Different</h2>
+
+<div class="value-grid">
+
+<div class="value">
+<h3>Authentic Moments</h3>
+<p>No forced poses — just real connection.</p>
 </div>
+
+<div class="value">
+<h3>Luxury Experience</h3>
+<p>From booking to delivery, everything feels premium.</p>
+</div>
+
+<div class="value">
+<h3>Golden Hour Focus</h3>
+<p>Lighting that creates warmth, emotion, and depth.</p>
+</div>
+
+<div class="value">
+<h3>Fast Turnaround</h3>
+<p>Your memories delivered quickly without sacrificing quality.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+<h2>Let’s Capture Your Story</h2>
+
+<a href="contact.html" class="btn">Book Your Session</a>
+
+</section>
+
+<!-- SCRIPT -->
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
