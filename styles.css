@@ -331,6 +331,10 @@ font-size:14px;
 opacity:0.9;
 }
 
+.hero-image {
+  filter: saturate(1.1) contrast(1.05);
+}
+  
 /* SERVICES */
 .services{
 padding:100px 10%;
