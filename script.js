@@ -1,37 +1,24 @@
-// CURSOR (safe)
-const cursor = document.createElement("div");
-cursor.classList.add("cursor");
-document.body.appendChild(cursor);
+// SAFE SCRIPT (no breaking)
 
-document.addEventListener("mousemove", e => {
-cursor.style.left = e.clientX + "px";
-cursor.style.top = e.clientY + "px";
-});
+// Cursor (won’t break anything if it fails)
+try {
+  const cursor = document.createElement("div");
+  cursor.classList.add("cursor");
+  document.body.appendChild(cursor);
 
-// PAGE LOAD (safe)
-window.addEventListener("load", () => {
-const page = document.querySelector(".page");
-if(page){
-page.classList.add("active");
-}
-});
+  document.addEventListener("mousemove", e => {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+  });
+} catch(e) {}
 
-// PAGE TRANSITIONS (safe)
+// Smooth scroll (safe enhancement only)
 document.querySelectorAll("a").forEach(link=>{
-link.addEventListener("click", e=>{
-const href = link.getAttribute("href");
-
-if(href && href.includes(".html")){
-const page = document.querySelector(".page");
-
-if(page){
-e.preventDefault();
-page.classList.remove("active");
-
-setTimeout(()=>{
-window.location = href;
-}, 400);
-}
-}
-});
+  link.addEventListener("click", e=>{
+    const href = link.getAttribute("href");
+    if(href && href.startsWith("#")){
+      e.preventDefault();
+      document.querySelector(href)?.scrollIntoView({behavior:"smooth"});
+    }
+  });
 });
