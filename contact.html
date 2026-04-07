@@ -173,7 +173,10 @@ document.addEventListener("DOMContentLoaded", function(){
   const form = document.getElementById("booking-form");
 
   form.addEventListener("submit", async function(e){
-    e.preventDefault();
+  e.preventDefault();
+
+  form.querySelector("button").innerText = "Booking...";
+  form.querySelector("button").disabled = true;
 
     const data = new FormData(form);
 
@@ -187,8 +190,11 @@ document.addEventListener("DOMContentLoaded", function(){
       });
 
       // redirect AFTER successful submit
-      window.location.href = "thankyou.html";
-
+      document.body.style.opacity = "0";
+setTimeout(()=>{
+  window.location.href = "thankyou.html";
+}, 500);
+      
     } catch (error){
       alert("Something went wrong. Try again.");
     }
